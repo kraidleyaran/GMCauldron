@@ -1,0 +1,4 @@
+enum ControlType {
+    Local,
+    Outside
+}

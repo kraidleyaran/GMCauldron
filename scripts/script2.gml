@@ -1,0 +1,1 @@
+///MoveObject(object, direction)

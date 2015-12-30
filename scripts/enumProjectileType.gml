@@ -1,0 +1,4 @@
+enum ProjectileType
+{
+    Octorokshell
+}
