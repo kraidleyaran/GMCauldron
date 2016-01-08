@@ -1,5 +1,8 @@
 enum SpriteType{
+    Default,
     Octorok,
     Link,
-    NoSprite
+    Ogre,
+    Goblin,
+    Knight,
 }

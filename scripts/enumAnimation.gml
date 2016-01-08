@@ -1,5 +1,7 @@
 enum Animation {
     Stand,
     Move,
-    Swing
+    Forward,
+    OneHand,
+    TwoHand
 }

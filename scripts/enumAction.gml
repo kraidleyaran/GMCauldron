@@ -1,5 +1,5 @@
 enum Action{
-    Swing,
+    Attack,
     Stand,
     Move
 }

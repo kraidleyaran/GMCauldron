@@ -1,7 +1,9 @@
 ///MoveObject(object, direction)
 var currentObject = argument0;
 var currentDirection = argument1;
+
 currentObject.CurrentDirection = currentDirection;
+currentObject.MovingDirection = currentDirection;
 
 switch(currentDirection)
 {
@@ -16,5 +18,7 @@ switch(currentDirection)
         break;
     case Direction.West:
         currentObject.x -= currentObject.MoveSpeed;
-        break;       
+        break; 
+    case Direction.None:
+        break;      
 }

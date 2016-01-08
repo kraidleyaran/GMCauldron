@@ -7,31 +7,67 @@
   <sounds name="sound"/>
   <sprites name="sprites">
     <sprites name="Link">
-      <sprites name="Standing">
-        <sprite>sprites\Link_Standing_West</sprite>
-        <sprite>sprites\Link_Standing_East</sprite>
-        <sprite>sprites\Link_Standing_North</sprite>
-        <sprite>sprites\Link_Standing_South</sprite>
-      </sprites>
-      <sprites name="Swinging">
-        <sprite>sprites\Link_Swing_North</sprite>
-        <sprite>sprites\Link_Swing_South</sprite>
-        <sprite>sprites\Link_Swing_East</sprite>
-        <sprite>sprites\Link_Swing_West</sprite>
-      </sprites>
-      <sprites name="Walking">
-        <sprite>sprites\Link_Walk_South</sprite>
-        <sprite>sprites\Link_Walk_North</sprite>
-        <sprite>sprites\Link_Walk_East</sprite>
-        <sprite>sprites\Link_Walk_West</sprite>
+      <sprites name="Green">
+        <sprites name="Walking">
+          <sprite>sprites\Link_Green_Walk_South</sprite>
+          <sprite>sprites\Link_Green_Walk_North</sprite>
+          <sprite>sprites\Link_Green_Walk_East</sprite>
+          <sprite>sprites\Link_Green_Walk_West</sprite>
+        </sprites>
+        <sprites name="Swinging">
+          <sprite>sprites\Link_Green_Swing_North</sprite>
+          <sprite>sprites\Link_Green_Swing_South</sprite>
+          <sprite>sprites\Link_Green_Swing_East</sprite>
+          <sprite>sprites\Link_Green_Swing_West</sprite>
+        </sprites>
+        <sprites name="Standing">
+          <sprite>sprites\Link_Green_Standing_West</sprite>
+          <sprite>sprites\Link_Green_Standing_East</sprite>
+          <sprite>sprites\Link_Green_Standing_North</sprite>
+          <sprite>sprites\Link_Green_Standing_South</sprite>
+        </sprites>
       </sprites>
     </sprites>
     <sprites name="Enemies">
       <sprites name="Octorok">
-        <sprite>sprites\Red_Octorok_South</sprite>
-        <sprite>sprites\Red_Octorok_East</sprite>
-        <sprite>sprites\Red_Octorok_West</sprite>
-        <sprite>sprites\Red_Octorok_North</sprite>
+        <sprites name="Red">
+          <sprites name="Walking">
+            <sprite>sprites\Red_Octorok_South</sprite>
+            <sprite>sprites\Red_Octorok_East</sprite>
+            <sprite>sprites\Red_Octorok_North</sprite>
+            <sprite>sprites\Red_Octorok_West</sprite>
+          </sprites>
+          <sprites name="Attacking">
+            <sprite>sprites\Red_Octorok_Shoot_South</sprite>
+            <sprite>sprites\Red_Octorok_Shoot_East</sprite>
+            <sprite>sprites\Red_Octorok_Shoot_North</sprite>
+            <sprite>sprites\Red_Octorok_Shoot_West</sprite>
+          </sprites>
+        </sprites>
+      </sprites>
+      <sprites name="Goblin">
+        <sprites name="Red">
+          <sprites name="Walk">
+            <sprite>sprites\Red_Goblin_Walk_South</sprite>
+            <sprite>sprites\Red_Goblin_Walk_East</sprite>
+            <sprite>sprites\Red_Goblin_Walk_North</sprite>
+            <sprite>sprites\Red_Goblin_Walk_West</sprite>
+          </sprites>
+          <sprites name="Attack">
+            <sprite>sprites\Red_Goblin_Attack_South</sprite>
+            <sprite>sprites\Red_Goblin_Attack_West</sprite>
+            <sprite>sprites\Red_Goblin_Attack_East</sprite>
+            <sprite>sprites\Red_Goblin_Attack_North</sprite>
+          </sprites>
+        </sprites>
+      </sprites>
+      <sprites name="Knight">
+        <sprites name="Red">
+          <sprite>sprites\Red_Knight_Walk_South</sprite>
+          <sprite>sprites\Red_Knight_Walk_North</sprite>
+          <sprite>sprites\Red_Knight_Walk_East</sprite>
+          <sprite>sprites\Red_Knight_Walk_West</sprite>
+        </sprites>
       </sprites>
     </sprites>
     <sprites name="Terrain">
@@ -46,9 +82,31 @@
         </sprites>
       </sprites>
       <sprite>sprites\Path</sprite>
+      <sprites name="Dungeon">
+        <sprite>sprites\Dungeon_Room_Blue</sprite>
+      </sprites>
     </sprites>
     <sprites name="Projectiles">
       <sprite>sprites\Octorok_Shell</sprite>
+    </sprites>
+    <sprites name="Place Holder">
+      <sprite>sprites\EnemySprite</sprite>
+      <sprite>sprites\PlayerSprite</sprite>
+      <sprite>sprites\NPCSprite</sprite>
+      <sprite>sprites\ItemSprite</sprite>
+      <sprite>sprites\TerrainSprite</sprite>
+      <sprite>sprites\ProjectileSprite</sprite>
+      <sprite>sprites\WeaponSprite</sprite>
+      <sprite>sprites\WeaponSprite_Side</sprite>
+      <sprite>sprites\SkillbookSprite</sprite>
+    </sprites>
+    <sprites name="Items">
+      <sprites name="Brown Sword">
+        <sprite>sprites\Brown_Sword_South</sprite>
+        <sprite>sprites\Brown_Sword_North</sprite>
+        <sprite>sprites\Brown_Sword_West</sprite>
+        <sprite>sprites\Brown_Sword_East</sprite>
+      </sprites>
     </sprites>
   </sprites>
   <backgrounds name="background"/>
@@ -65,18 +123,31 @@
       <script>scripts\enumSpriteType.gml</script>
       <scripts name="Objects">
         <scripts name="Enemies">
+          <script>scripts\enumMonsterType.gml</script>
           <script>scripts\enumOctorokProjectile.gml</script>
         </scripts>
+        <script>scripts\enumRelativeSide.gml</script>
+        <script>scripts\enumLinkSwing.gml</script>
       </scripts>
-      <script>scripts\enumAggro.gml</script>
+      <script>scripts\enumSkill.gml</script>
+      <script>scripts\enumSkillName.gml</script>
+      <script>scripts\enumAlignment.gml</script>
+      <script>scripts\script70.gml</script>
+      <scripts name="Player">
+        <script>scripts\enumPlayerColor.gml</script>
+      </scripts>
     </scripts>
     <scripts name="Object">
       <script>scripts\GenerateProperties.gml</script>
       <script>scripts\MoveObject.gml</script>
       <script>scripts\SetObjectAnimation.gml</script>
       <script>scripts\GetAnimationName.gml</script>
-      <script>scripts\ShootProjectile.gml</script>
       <script>scripts\GetProjectilePosition.gml</script>
+      <script>scripts\CheckForShooting.gml</script>
+      <script>scripts\DestroyObjectMapsAndLists.gml</script>
+      <script>scripts\CheckHitList.gml</script>
+      <script>scripts\SetProjectilePos.gml</script>
+      <script>scripts\script77.gml</script>
     </scripts>
     <scripts name="Player">
       <script>scripts\CheckPlayerKeyPress.gml</script>
@@ -89,22 +160,45 @@
       <script>scripts\SetLoopedObjectAnimation.gml</script>
       <script>scripts\SetAnimationFromAction.gml</script>
       <script>scripts\CheckCurrentAnimation.gml</script>
+      <script>scripts\SetPlayerSprite.gml</script>
+      <scripts name="Set Player Colors">
+        <script>scripts\SetPlayerToGreen.gml</script>
+      </scripts>
     </scripts>
     <scripts name="Maps">
       <script>scripts\GetValueFromMap.gml</script>
       <script>scripts\AddKeyValueToMap.gml</script>
       <script>scripts\DoesKeyExist.gml</script>
       <script>scripts\RemoveKeyFromMap.gml</script>
+      <script>scripts\SetKeyOfMap.gml</script>
     </scripts>
     <scripts name="Enemy">
       <script>scripts\MoveEnemy.gml</script>
-      <script>scripts\GenerateDefaultEnemyProperties.gml</script>
-      <script>scripts\SetOctorokSprites.gml</script>
       <script>scripts\GetOpenDirection.gml</script>
       <script>scripts\CheckOpenDirection.gml</script>
       <script>scripts\CheckAttackDirection.gml</script>
       <script>scripts\GenerateEnemyProperties.gml</script>
       <script>scripts\CheckAggroRangeForDirection.gml</script>
+      <scripts name="DefaultProperties">
+        <script>scripts\GenerateDefaultEnemyProperties.gml</script>
+        <script>scripts\SetDefaultEnemySprites.gml</script>
+        <scripts name="Goblin">
+          <script>scripts\GenerateGoblinSprites.gml</script>
+          <script>scripts\GenerateGoblinProperties.gml</script>
+        </scripts>
+        <scripts name="Octorok">
+          <script>scripts\SetOctorokSprites.gml</script>
+        </scripts>
+      </scripts>
+      <script>scripts\GenerateDefaultAggroRanges.gml</script>
+      <script>scripts\SetAggroRange.gml</script>
+      <script>scripts\CheckLeashRange.gml</script>
+      <script>scripts\CheckAggroRange.gml</script>
+      <script>scripts\AttackTarget.gml</script>
+      <scripts name="AttackPatterns">
+        <script>scripts\ExecuteDefaultAttackPattern.gml</script>
+      </scripts>
+      <script>scripts\CheckTargetDirection.gml</script>
     </scripts>
     <scripts name="Terrain">
       <script>scripts\GenerateTerrainProperties.gml</script>
@@ -115,12 +209,22 @@
       <script>scripts\CreateArray.gml</script>
     </scripts>
     <scripts name="Lists">
-      <script>scripts\GetFromList.gml</script>
       <script>scripts\CreateNewList.gml</script>
       <script>scripts\GetIndexOfObject.gml</script>
       <script>scripts\AddToList.gml</script>
       <script>scripts\RemoveFromList.gml</script>
       <script>scripts\GetListLength.gml</script>
+      <script>scripts\ShuffleList.gml</script>
+      <script>scripts\GetFromList.gml</script>
+    </scripts>
+    <scripts name="RandomDungeon">
+      <script>scripts\GetAvailableRoom.gml</script>
+    </scripts>
+    <scripts name="Skills">
+      <script>scripts\UseSkill.gml</script>
+      <script>scripts\SwingWeapon.gml</script>
+      <script>scripts\GenerateSkillId.gml</script>
+      <script>scripts\ShootProjectile.gml</script>
     </scripts>
   </scripts>
   <objects name="objects">
@@ -129,6 +233,7 @@
     <object>objects\NPC</object>
     <object>objects\Terrain</object>
     <object>objects\Item</object>
+    <object>objects\Weapon</object>
     <objects name="Static">
       <objects name="Terrain">
         <object>objects\RedRock_BottomLeft</object>
@@ -141,11 +246,25 @@
       <objects name="Projectiles">
         <object>objects\OctorokShell_FromSide</object>
       </objects>
+      <objects name="Enemies">
+        <object>objects\OctorokObject</object>
+      </objects>
+      <objects name="Items">
+        <object>objects\BrownSword</object>
+      </objects>
+      <objects name="Player">
+        <object>objects\GreenLink</object>
+      </objects>
     </objects>
     <object>objects\Projectile</object>
+    <object>objects\GUI</object>
+    <object>objects\DungeonRoom</object>
+    <object>objects\SkillBook</object>
+    <object>objects\object18</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>
+    <room>rooms\RandomRoom</room>
   </rooms>
   <constants number="1">
     <constant name="EMPTYARRAY">"THIS ARRAY IS EMPTY SO DO NOT USE IT"</constant>

@@ -1,7 +1,11 @@
-///CheckAggroRangeForDirection(object, direction, staticObjectType)
+///CheckAggroRangeForDirection(object, direction, aggroRange, staticObjectType)
 var currentObject = argument0;
 var currentDirection = argument1;
-var currentObjectType = argument2;
+var currentAggroRange = argument2;
+var currentObjectType = argument3;
+
+
+
 
 var nearestType = instance_nearest(currentObject.x, currentObject.y, currentObjectType);
 
@@ -36,9 +40,9 @@ switch (currentDirection)
         
         break;
     case Direction.West:
-        x1 = currentObject.x;
+        x1 = currentObject.x - (currentObject.AggroRange * Aggro.Width);
         y1 = currentObject.y;
-        x2 = currentObject.x + currentObject.sprite_width - (currentObject.AggroRange * Aggro.Width);
+        x2 = currentObject.x;
         y2 = currentObject.y + currentObject.sprite_height;
         
         break; 

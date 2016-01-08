@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>GenerateProperties(self)
+            <string>event_inherited();
 self.Type = ProjectileType.Octorokshell;
 self.CurrentType = ObjectType.Missile;
 self.MoveSpeed = 5;

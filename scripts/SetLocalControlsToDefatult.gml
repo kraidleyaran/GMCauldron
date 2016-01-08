@@ -6,4 +6,4 @@ AddKeyValueToMap(currentPlayer.LocalControls, PlayerControl.Left,vk_left);
 AddKeyValueToMap(currentPlayer.LocalControls, PlayerControl.Right,vk_right);
 AddKeyValueToMap(currentPlayer.LocalControls, PlayerControl.A,ord('A'));
 
-AddKeyValueToMap(currentPlayer.ButtonActions, PlayerControl.A, Action.Swing);
+AddKeyValueToMap(currentPlayer.ButtonActions, PlayerControl.A, string(Action.Attack) + string(SkillName.SwingWoodSword));

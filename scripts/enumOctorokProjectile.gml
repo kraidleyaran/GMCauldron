@@ -1,10 +1,10 @@
 enum OctorokProjectile{
     NorthX = 4,
-    NorthY = 0,
-    SouthX = 4,
-    SouthY = 17,
-    EastX = 15,
-    EastY = 5,
-    WestX = 0,
-    WestY = 5
+    NorthY = -1,
+    SouthX = 10,
+    SouthY = 32,
+    EastX = 32,
+    EastY = 10,
+    WestX = -1,
+    WestY = 10,
 }

@@ -1,7 +1,10 @@
 ///SetAnimationFromAction(player, action)
 var currentPlayer = argument0;
 var currentAction = argument1;
-
+if (currentPlayer.CurrentDirection == Direction.None)
+{
+    return false;
+}
 switch(currentAction)
 {
     case Action.Stand:
@@ -10,8 +13,8 @@ switch(currentAction)
     case Action.Move:
         SetLoopedObjectAnimation(currentPlayer, GetAnimationName(Animation.Move, currentPlayer.CurrentDirection),currentPlayer.DefaultFrameSpeed);
         break;
-    case Action.Swing:
-        SetObjectAnimation(currentPlayer, GetAnimationName(Animation.Swing, currentPlayer.CurrentDirection),currentPlayer.DefaultFrameSpeed,currentPlayer.AttackSpeed);
+    case Action.Attack:
+        SetObjectAnimation(currentPlayer, GetAnimationName(Animation.Forward, currentPlayer.CurrentDirection),currentPlayer.DefaultFrameSpeed, currentPlayer.AttackSpeed);
         break;
         
 }
